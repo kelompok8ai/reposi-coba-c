@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-sans antialiased;
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-2xl font-bold text-navy tracking-tight;
+  }
+
+  .section-subtitle {
+    @apply text-text-secondary text-sm mt-1;
+  }
+
+  .card-base {
+    @apply bg-surface rounded-card border border-border shadow-card transition-all duration-200;
+  }
+
+  .card-base:hover {
+    @apply shadow-elevated;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl
+           hover:bg-navy transition-all duration-200 shadow-soft;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 bg-surface text-primary font-semibold
+           rounded-xl border-2 border-primary hover:bg-primary/5 transition-all duration-200;
+  }
+
+  .badge-positive {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-success;
+  }
+
+  .badge-neutral {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-text-secondary;
+  }
+
+  .badge-negative {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-50 text-danger;
+  }
+
+  .kpi-value {
+    @apply text-2xl font-bold text-navy tabular-nums;
+  }
+
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-card;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+}
