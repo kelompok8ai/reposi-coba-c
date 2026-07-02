@@ -64,15 +64,13 @@ export interface CalendarEvent {
 }
 
 export const navItems = [
-  'Beranda', 'Media Monitoring', 'Corporate News', 'Press Release',
-  'Publikasi', 'Media Relation', 'Analitik', 'Laporan', 'Arsip',
-  'Governance', 'Knowledge Center',
+  'Beranda', 'Jadwal Dinas Direktur', 'Media Monitoring', 'Corporate News',
+  'Press Release', 'Analitik', 'Laporan', 'Governance',
 ];
 
 export const quickFilters = [
-  'Hari Ini', '7 Hari', '30 Hari', '90 Hari',
+  'Hari Ini', '7 Hari', '30 Hari',
   'Positif', 'Netral', 'Negatif', 'CSR', 'Digital Banking',
-  'Kredit', 'Dana', 'OJK', 'BI', 'Pemprov Sumut', 'Investor Relation',
 ];
 
 export const tickerCategories = [

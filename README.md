@@ -4,6 +4,8 @@ Executive Corporate Communication Intelligence Center untuk Public Relation, Med
 
 ## Fitur
 
+- **Jadwal Dinas Direktur** – Penjadwalan perjalanan dinas direksi dengan reminder otomatis (1 hari, 3 jam, 30 menit)
+- **Reminder System** – Notifikasi browser + banner in-app untuk jadwal dinas mendatang
 - **Hero Dashboard** – Ringkasan eksekutif real-time dengan KPI strategis
 - **Media Intelligence** – Monitoring dan analisis cakupan media multi-channel
 - **Reputation Analytics** – Visualisasi tren reputasi, share of voice, dan distribusi media
@@ -11,8 +13,10 @@ Executive Corporate Communication Intelligence Center untuk Public Relation, Med
 - **Issue Monitoring** – Pemantauan isu dengan severity, SLA, dan status tracking
 - **Sentiment Analysis** – Analisis sentimen positif, netral, dan negatif
 - **Press Release Center** – Siaran pers resmi dengan media kit
-- **Media Relation Hub** – Jaringan media partner dan relationship scoring
-- **Document & Knowledge Center** – Repositori dokumen korporasi dan panduan
+
+### Dihapus (tidak prioritas)
+
+Topic Cloud, Corporate Program, Knowledge Center, Document Center, Media Relation Grid, Executive Calendar generik — digantikan fokus pada Jadwal Dinas Direktur.
 
 ## Tech Stack
 

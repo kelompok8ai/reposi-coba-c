@@ -1,29 +1,44 @@
-import { Calendar, Megaphone, AlertTriangle, Phone, TrendingUp, Newspaper } from 'lucide-react';
+import { Calendar, Bell, AlertTriangle, Phone, TrendingUp, MapPin } from 'lucide-react';
 import { sidebarItems } from '../data/mockData';
+import { formatCountdown } from '../hooks/useReminders';
+import type { DirectorDinas } from '../types/directorSchedule';
 
-export default function Sidebar() {
+interface Props {
+  upcomingDinas: DirectorDinas[];
+}
+
+export default function Sidebar({ upcomingDinas }: Props) {
   return (
     <aside className="hidden xl:block w-80 shrink-0">
       <div className="sticky top-24 space-y-4 max-h-[calc(100vh-120px)] overflow-y-auto scrollbar-thin pr-1">
-        {/* Agenda */}
-        <div className="card-base p-4">
+        {/* Dinas Direktur Reminder */}
+        <div className="card-base p-4 border-gold/30 border-2">
           <h3 className="font-bold text-sm text-navy mb-3 flex items-center gap-2">
-            <Calendar size={16} className="text-primary" /> Agenda Hari Ini
+            <Bell size={16} className="text-gold" /> Reminder Dinas Direktur
           </h3>
-          <div className="space-y-2">
-            {sidebarItems.agenda.map((a) => (
-              <div key={a.title} className="flex items-center justify-between text-xs p-2 bg-background rounded-lg">
-                <span className="font-medium text-navy">{a.title}</span>
-                <span className="text-text-secondary">{a.time}</span>
-              </div>
-            ))}
-          </div>
+          {upcomingDinas.length === 0 ? (
+            <p className="text-xs text-text-secondary">Tidak ada dinas terjadwal.</p>
+          ) : (
+            <div className="space-y-2">
+              {upcomingDinas.map((d) => (
+                <div key={d.id} className="p-3 bg-gold/5 rounded-xl border border-gold/20">
+                  <div className="text-[10px] font-semibold text-gold mb-1">
+                    {formatCountdown(d.startDate, d.startTime)}
+                  </div>
+                  <div className="font-semibold text-xs text-navy">{d.directorName}</div>
+                  <div className="text-[10px] text-text-secondary flex items-center gap-1 mt-1">
+                    <MapPin size={10} /> {d.destination}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Press Schedule */}
         <div className="card-base p-4">
           <h3 className="font-bold text-sm text-navy mb-3 flex items-center gap-2">
-            <Megaphone size={16} className="text-primary" /> Press Conference
+            <Calendar size={16} className="text-primary" /> Press Conference
           </h3>
           {sidebarItems.pressSchedule.map((p) => (
             <div key={p.title} className="flex items-center justify-between text-xs p-2 bg-background rounded-lg mb-2">
@@ -31,30 +46,6 @@ export default function Sidebar() {
               <span className="text-primary font-semibold">{p.date}</span>
             </div>
           ))}
-        </div>
-
-        {/* Announcements */}
-        <div className="card-base p-4">
-          <h3 className="font-bold text-sm text-navy mb-3">Pengumuman Perusahaan</h3>
-          {sidebarItems.announcements.map((a) => (
-            <div key={a} className="text-xs p-2 border-l-2 border-gold pl-3 mb-2 text-text-secondary hover:text-primary cursor-pointer transition-colors">
-              {a}
-            </div>
-          ))}
-        </div>
-
-        {/* Top Media */}
-        <div className="card-base p-4">
-          <h3 className="font-bold text-sm text-navy mb-3 flex items-center gap-2">
-            <Newspaper size={16} className="text-primary" /> Top Media
-          </h3>
-          <div className="flex flex-wrap gap-2">
-            {sidebarItems.topMedia.map((m) => (
-              <span key={m} className="px-2.5 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full cursor-pointer hover:bg-primary hover:text-white transition-colors">
-                {m}
-              </span>
-            ))}
-          </div>
         </div>
 
         {/* Trending */}
