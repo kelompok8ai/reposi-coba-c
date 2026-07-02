@@ -25,12 +25,27 @@ Executive Corporate Communication Intelligence Center untuk Public Relation, Med
 
 ## Menjalankan
 
+**Penting:** Pastikan Anda berada di branch yang berisi kode landing page.
+
+```bash
+git checkout cursor/banksumut-corporate-secretary-landing-f70d
+# atau setelah merge: git checkout main
+```
+
 ```bash
 npm install
 npm run dev
 ```
 
-Buka [http://localhost:5173](http://localhost:5173)
+Buka **http://localhost:5173** di browser.
+
+Jika halaman kosong / tidak bisa diakses:
+
+1. Pastikan terminal menampilkan `VITE ready` tanpa error merah
+2. Buka URL persis: `http://localhost:5173` (bukan buka file `index.html` langsung)
+3. Jika pakai WSL / remote / Codespaces, gunakan URL **Network** yang muncul di terminal (mis. `http://0.0.0.0:5173` atau port forwarding)
+4. Coba hard refresh: `Ctrl+Shift+R` (Windows) atau `Cmd+Shift+R` (Mac)
+5. Cek browser console (`F12` → Console) untuk error JavaScript
 
 ## Build Production
 
